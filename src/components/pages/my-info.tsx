@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { selectUser } from '../../redux/user/user-slice';
 import { useAppSelector } from '../../redux/hooks';
 

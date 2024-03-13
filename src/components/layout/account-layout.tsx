@@ -13,6 +13,7 @@ const AccountLayout: React.FC<AccountLayoutPropsType> = (props) => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const user = useAppSelector(selectUser);
+    //@ts-ignore
     const [activeUnit, setActiveUnit] = useState(0);
     const location = useLocation();
     console.log(location.pathname);

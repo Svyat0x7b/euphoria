@@ -6,7 +6,7 @@ interface IProductGalleryProps {
 
 const ProductGallery: React.FC<IProductGalleryProps> = ({ items }) => {
     const [activeImg, setActiveImg] = useState(items[0]);
-    const [imgList, setImgList] = useState(items);
+    const [imgList] = useState(items);
 
     return (
         <section className="w-1/2 flex items-center justify-center gap-4">

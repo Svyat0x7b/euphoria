@@ -12,6 +12,7 @@ interface IFeedbackSectionProps {
 const FeedbackSection: React.FC<IFeedbackSectionProps> = ({ id }) => {
     const [fetchedFeedbacks, setFetchedFeedbacks] = useState(null);
     useEffect(() => {
+        //@ts-ignore
         const fetchFeedbackById = async (id: string) => {
             const res = await axios.get(`${API_DOMAIN}/api/v1/products/${id}/feedbacks`);
             setFetchedFeedbacks(res.data);

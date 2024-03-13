@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductItem from '../women/product-item';
 import { ProductType } from '../women/product-list';
-import { Link } from 'react-router-dom';
 import { API_DOMAIN } from '../../constants';
 
 const FeaturedProducts = () => {
     const [featuredProducts, setFeaturedProducts] = useState([]);
-    const [error, setError] = useState({ is: false, message: null });
+    const [, setError] = useState({ is: false, message: null });
 
     useEffect(() => {
         const fetchFeaturedProducts = async () => {

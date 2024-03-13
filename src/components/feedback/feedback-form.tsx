@@ -4,7 +4,7 @@ interface IFeedbaclFormProps {
     id: string;
 }
 
-const FeedbackForm: React.FC<IFeedbaclFormProps> = ({ id }) => {
+const FeedbackForm: React.FC<IFeedbaclFormProps> = () => {
     return (
         <form
             className="self-center flex flex-col gap-[25px] w-[350px]"

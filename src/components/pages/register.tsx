@@ -25,7 +25,7 @@ const Register = () => {
         address: '',
         password: '',
     });
-    const [error, setError] = useState<ErrorType>({ isError: false, message: '' });
+    const [, setError] = useState<ErrorType>({ isError: false, message: '' });
 
     const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setUserData({ ...userData, [e.target.name]: e.target.value });

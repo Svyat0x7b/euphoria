@@ -5,7 +5,7 @@ interface IFeedbackListProps {
     items: any;
 }
 
-const FeedbackList: React.FC<IFeedbackListProps> = ({ items }) => {
+const FeedbackList: React.FC<IFeedbackListProps> = () => {
     return (
         <ul className="grid grid-cols-2 mt-[50px] gap-y-6">
             <FeedbackItem />

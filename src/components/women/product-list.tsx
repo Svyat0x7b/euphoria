@@ -1,6 +1,4 @@
 import ProductItem from './product-item';
-import p1 from '../../assets/products/p1.png';
-import p2 from '../../assets/products/p2.png';
 
 export type ProductType = {
     _id: string;

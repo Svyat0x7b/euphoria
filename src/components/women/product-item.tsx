@@ -15,7 +15,7 @@ type ProductItemPropsType = {
 };
 
 const ProductItem: React.FC<ProductItemPropsType> = ({ product }) => {
-    const { _id, id, title, brand, price, img } = product;
+    const { id, title, brand, price, img } = product;
     const [isAddedToWishlist, setIsAddedToWishlist] = useState<Boolean>(false);
     const wishlistItems = useAppSelector(selectWishlist);
     const dispatch = useAppDispatch();

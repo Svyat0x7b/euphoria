@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import {
@@ -9,7 +9,6 @@ import {
     shirtIcon,
     starIcon,
     truckIcon,
-    userIcon,
 } from '../../assets/product';
 import ProductGallery from '../product-gallery/product-gallery';
 import { ProductType } from '../women/product-list';
