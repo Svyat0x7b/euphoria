@@ -1,63 +1,10 @@
-import facebook from '../../assets/facebook.svg';
-import insta from '../../assets/insta.svg';
-import twitter from '../../assets/twitter.svg';
+import { facebookFooter, instaFooter, twitterFooter } from '../../assets';
 
-type LinkType = {
-    title: string;
-    url: string;
-};
-type LinkObjType = {
-    headtext: string;
-    links: LinkType[];
-};
-
-const FOOTERLINKS: LinkObjType[] = [
-    {
-        headtext: 'Need Help',
-        links: [
-            { title: 'Contact Us', url: '/contact' },
-            { title: 'Track Order', url: '/track-order' },
-            { title: 'Returns & Refunds', url: '/returnpolicy' },
-            { title: 'FAQ`s', url: '/faq' },
-            { title: 'Career', url: '/carrer' },
-        ],
-    },
-    {
-        headtext: 'Need Help',
-        links: [
-            { title: 'Contact Us', url: '/contact' },
-            { title: 'Track Order', url: '/track-order' },
-            { title: 'Returns & Refunds', url: '/returnpolicy' },
-            { title: 'FAQ`s', url: '/faq' },
-            { title: 'Career', url: '/carrer' },
-        ],
-    },
-    {
-        headtext: 'Need Help',
-        links: [
-            { title: 'Contact Us', url: '/contact' },
-            { title: 'Track Order', url: '/track-order' },
-            { title: 'Returns & Refunds', url: '/returnpolicy' },
-            { title: 'FAQ`s', url: '/faq' },
-            { title: 'Career', url: '/carrer' },
-        ],
-    },
-    {
-        headtext: 'Need Help',
-        links: [
-            { title: 'Contact Us', url: '/contact' },
-            { title: 'Track Order', url: '/track-order' },
-            { title: 'Returns & Refunds', url: '/returnpolicy' },
-            { title: 'FAQ`s', url: '/faq' },
-            { title: 'Career', url: '/carrer' },
-        ],
-    },
-];
-
+import { FOOTERLINKS, LinkObjType, LinkType } from '../../constants';
 const Footer = () => {
     return (
-        <footer className="h-fit mt-[100px] px-[186px] py-[60px] bg-[#3C4242]">
-            <div className="flex justify-center gap-[80px] flex-wrap">
+        <footer className="h-fit px-[186px] py-[60px] bg-[#3C4242]">
+            <div className="flex spc:justify-center justify-start spc:gap-[80px] gap-[40px] flex-wrap">
                 {FOOTERLINKS.map((linkObj: LinkObjType) => {
                     return (
                         <div>
@@ -83,13 +30,13 @@ const Footer = () => {
             <div>
                 <div className="w-full flex justify-center items-center gap-20 my-[70px]">
                     <a>
-                        <img src={facebook} alt="facebook" />
+                        <img src={facebookFooter} alt="facebook" />
                     </a>
                     <a>
-                        <img src={insta} alt="instagram" />
+                        <img src={instaFooter} alt="instagram" />
                     </a>
                     <a>
-                        <img src={twitter} alt="twitter" />
+                        <img src={twitterFooter} alt="twitter" />
                     </a>
                 </div>
                 <div className="text-center text-[#fff] text-[18px] font-[700]">

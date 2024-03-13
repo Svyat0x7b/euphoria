@@ -1,16 +1,12 @@
-import React from 'react';
-import Header from '../partials/header';
-import Hero from '../home/hero';
-import Discounts from '../home/discounts';
-import Arrivals from '../home/arrivals';
-import Footer from '../partials/footer';
+import { Hero, Discounts, Arrivals, FeaturedProducts } from '../home/index';
 
 const Home = () => {
     return (
-        <main className="mb-auto">
+        <main className="pb-[100px]">
             <Hero />
             <Discounts />
             <Arrivals />
+            <FeaturedProducts />
         </main>
     );
 };

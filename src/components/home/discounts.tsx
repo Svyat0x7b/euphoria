@@ -1,24 +1,10 @@
-import React from 'react';
-import hero1 from '../../assets/card-hero-1.jpg';
-import hero2 from '../../assets/card-hero-2.jpg';
-
-type DiscountType = {
-    subtext: string;
-    headtext: string;
-    discount: number;
-    img: any;
-};
-
-const DISCOUNTS: DiscountType[] = [
-    { subtext: 'Low Price', headtext: 'High Coziness', discount: 50, img: hero1 },
-    { subtext: 'Beyoung Presents', headtext: 'Breezy Summer Style', discount: 25, img: hero2 },
-];
+import { DISCOUNTS, DiscountType } from '../../constants';
 
 const Discounts = () => {
     return (
-        <section className="pt-[130px] px-[100px]">
-            <ul className="flex justify-between">
-                {DISCOUNTS.map((discount) => (
+        <section className="spc:pt-[130px] pt-[60px] spc:px-[100px] px-[50px]">
+            <ul className=" w-full flex flex-wrap gap-[20px] items-center justify-center">
+                {DISCOUNTS.map((discount: DiscountType) => (
                     <li className="relative">
                         <div className="absolute top-[5%] left-[28px] w-[264px]">
                             <h3 className="text-[18px] font-[800] text-[#fff] mt-[40px]">

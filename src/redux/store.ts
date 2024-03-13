@@ -1,14 +1,20 @@
-import { configureStore } from '@reduxjs/toolkit'
-import cartSlice from './cart/cart-slice'
+import { configureStore } from '@reduxjs/toolkit';
+import cartReducer from './cart/cart-slice';
+import wishlistReducer from './wishlist/wishlist-slice';
+import userReducer from './user/user-slice';
+import searchReducer from './search/search-slice';
 
 export const store = configureStore({
-  reducer: {
-    cart: cartSlice,
-    // posts: postsReducer,
-    // comments: commentsReducer,
-    // users: usersReducer,
-  },
-})
+    reducer: {
+        cart: cartReducer,
+        wishlist: wishlistReducer,
+        user: userReducer,
+        search: searchReducer,
+        // posts: postsReducer,
+        // comments: commentsReducer,
+        // users: usersReducer,
+    },
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

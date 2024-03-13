@@ -1,19 +1,4 @@
-import arrival1 from '../../assets/arrival-1.png';
-import arrival2 from '../../assets/arrival-2.png';
-import arrival3 from '../../assets/arrival-3.png';
-import arrival4 from '../../assets/arrival-4.png';
-
-type ArrivalType = {
-    img: string;
-    title: string;
-};
-const ARRIVALS: ArrivalType[] = [
-    { img: arrival1, title: 'Knitted Joggers' },
-    { img: arrival2, title: 'Full Sleeve' },
-    { img: arrival3, title: 'Active T-Shirts' },
-    { img: arrival4, title: 'Urban Shirts' },
-];
-
+import { ARRIVALS, ArrivalType } from '../../constants';
 const Arrivals = () => {
     return (
         <section className="pt-[100px] pl-[100px]">
@@ -24,10 +9,16 @@ const Arrivals = () => {
             <ul className="mt-[70px] flex gap-[40px]">
                 {ARRIVALS.map((arrival: ArrivalType) => (
                     <li key={arrival.title}>
-                        <img src={arrival.img} alt={arrival.title} />
+                        <div className="w-[100%] h-[100%] object-contain">
+                            <img
+                                src={arrival.img}
+                                alt={arrival.title}
+                                className="w-[263px] h-[263px]"
+                            />
+                        </div>
                         <a
                             href="#"
-                            className="block mt-[33px] ml-[5px] text-[20px] font-[700] text-[#3C4242]">
+                            className="block mt-[5px] ml-[5px] text-[20px] font-[700] text-[#3C4242]">
                             {arrival.title}
                         </a>
                     </li>

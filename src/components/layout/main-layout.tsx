@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
-import Header from '../partials/header';
-import Footer from '../partials/footer';
+import { Header, Footer } from '../partials/index';
 
 type MainLayoutPropType = {
     children: ReactNode;

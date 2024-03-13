@@ -1,25 +1,24 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { selectCart, selectTotalPrice } from '../../redux/cart/cart-slice';
 import {
     incrementProductAmount,
     decrementProductAmount,
     removeFromCart,
+    CartItemType,
 } from '../../redux/cart/cart-slice';
-import bin from '../../assets/delete.svg';
-import { CartItemType } from '../../redux/cart/cart-slice';
-import emptyCart from '../../assets/cart/empty-cart.png';
+import { bin, emptyCart } from '../../assets';
 
 const Cart = () => {
     const items = useAppSelector(selectCart);
     const totalPrice = useAppSelector(selectTotalPrice);
     const formattedTotalPrice = totalPrice.toFixed(2);
-
+    const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
     if (items.length === 0) {
         return (
-            <main>
+            <main className="bg-[#F6F6F6] pt-[10px] text-center pb-[100px]">
                 <div className="w-full text-center mb-[50px]">
                     <p className="text-[#807D7E] text-[14px] font-[400]">
                         Already registered?{' '}
@@ -36,12 +35,19 @@ const Cart = () => {
                         <img src={emptyCart} alt="empty cart" />
                     </div>
                 </div>
+                <div className="py-[15px] w-full text-center">
+                    <button
+                        onClick={() => navigate('/')}
+                        className="px-[48px] py-[12px] bg-[#8A33FD] rounded-[8px] text-[18px] font-[600] text-[#fff]">
+                        Continue Shopping
+                    </button>
+                </div>
             </main>
         );
     }
 
     return (
-        <main>
+        <main className="pb-[100px]">
             <div className="w-full text-center mb-[50px]">
                 <p className="text-[#807D7E] text-[14px] font-[400]">
                     Already registered?{' '}
@@ -71,7 +77,7 @@ const Cart = () => {
                                     <div className="flex gap-20 pl-[100px] pt-[70px] pb-[50px] w-fit">
                                         <div className="w-[105px] h-[120px]">
                                             <img
-                                                src={item.product.img}
+                                                src={item.product.img[0]}
                                                 alt={item.product.title}
                                                 className="w-[100%] h-[100%] object-contain"
                                             />
@@ -81,10 +87,10 @@ const Cart = () => {
                                                 {item.product.title}
                                             </h1>
                                             <p className="text-[14px] text-[#807D7E] font-[500]">
-                                                Size: {item.product.size}
+                                                Size: {Object.keys(item.product.sizes)[0]}
                                             </p>
                                             <p className="text-[14px] text-[#807D7E] font-[500]">
-                                                Color: {item.product.color}
+                                                Color: {item.product.colors[0]}
                                             </p>
                                         </div>
                                     </div>
